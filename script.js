@@ -6,7 +6,7 @@ function run(){
 		
 
 		var apiKey = "&apikey=8579279efc25ff521d33aa9602025f78";
-		var mainWebString = "http(s)://gateway.marvel.com";
+		var mainWebString = "https://gateway.marvel.com";
 		var characterSearch = "/v1/public/characters?name="
 		var finalWebString = mainWebString+characterSearch+string+apikey;
 		req.open("GET", finalWebString, true);
