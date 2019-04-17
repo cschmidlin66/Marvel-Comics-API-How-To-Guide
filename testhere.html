@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Marvel Comics API Getting Started Guide - Test Here</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Home</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="starthere.html">Start Here</a>
+						<a href="setup.html">Setup</a>
+						<a href="response.html">Understanding the response</a>
+						<a href="Code.html">Coding with the API</a>
+						<a href="examples.html">Code Examples</a>
+						<a href="testhere.html">Test Here</a>
+						
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Three -->
+			<section id="Tester" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Examples in Action!</h2>
+						<p style="color:black;">Testing the Api </p>
+					</header>
+					
+					<div class="flex flex-2">
+						<article>
+							<header>
+								<h3>Search for a character by name</h3>
+							</header>
+							<div >
+								<img src="images/marvelLogo.jpg" alt="Pic 01"  />
+							</div>
+							<p style="color:black;">In the textfield below, the user can enter a Marvel characters name. The results displayed will include an Image of the character as well as the characters name and a brief description(if it's available).</p>
+
+							<footer>
+								<form>
+									<input type="text" name="characterInput" id="input">
+									<input type="submit" name="testButton" id = "testButton" value = "Test"></a>
+							
+								</form>
+								
+							</footer>
+						</article>
+						<article>
+							
+							<header>
+								<h3>Character Search By Name Data Results</h3>
+							</header>
+							<div >
+								<img src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/standard_large.jpg" id = "characterPic" />
+							</div>
+							<p id= "resultsName"></p>
+							<p id = "results"></p>
+							
+						</article>
+					</div>
+					<div class="flex flex-2">
+						<article>
+							<header>
+								<h3>Search for characters by name that start with specific letters </h3>
+							</header>
+							<div >
+								<img src="images/marvelLogo3.jpg" alt="Pic 01"  />
+							</div>
+							<p style="color:black;">In the textfield below, the user can enter letters and the the API will return the first 5 characters whose names start with those letters if they are available.</p>
+
+							<footer>
+								<form>
+									<input type="text" name="characterInput" id="input2">
+									<input type="submit" name="testButton" id = "testButton2" value = "Test"></a>
+							
+								</form>
+								
+							</footer>
+						</article>
+						<article>
+							
+							<header>
+								<h3>Character Tester Data Results</h3>
+							</header>
+
+							<ul id="characterList">
+								
+							</ul>
+							<p>Data provided by Marvel. © 2014 Marvel</p>
+						</article>
+					</div>
+					<div class="flex flex-2">
+						<article>
+							<header>
+								<h3>Get a character's first appearance </h3>
+							</header>
+							<div >
+								<img src="images/marvelLogo4.jpg" alt="Pic 01"  />
+							</div>
+							<p style="color:black;">In the textfield below, the user can enter a characters name and it will display the cover of the first issue the character ever appeared in.</p>
+
+							<footer>
+								<form>
+									<input type="text" name="characterInput" id="input3">
+									<input type="submit" name="testButton" id = "testButton3" value = "Test"></a>
+							
+								</form>
+								
+							</footer>
+						</article>
+						<article>
+							
+							<header>
+								<h3>First Appearance Data Results</h3>
+							</header>
+							<p id= "resultsName2"></p>
+							<p id = "issueName"></p>
+							<div >
+								<img src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/standard_large.jpg" id = "coverPic" />
+							</div>
+							
+							
+						</article>
+					</div>
+					<div class="flex flex-2">
+						<article>
+							<header>
+								<h3>Get a character's creators </h3>
+							</header>
+							<div >
+								<img src="images/marvelLogo5.jpg" alt="Pic 01"  />
+							</div>
+							<p style="color:black;">In the textfield below, the user can enter a characters name and it will return the names of the people who created the character..</p>
+
+							<footer>
+								<form>
+									<input type="text" name="characterInput" id="input4">
+									<input type="submit" name="testButton" id = "testButton4" value = "Test"></a>
+							
+								</form>
+								
+							</footer>
+						</article>
+						<article>
+							<header>
+								<h3>Creator Data Results</h3>
+							</header>
+
+							<ul id="creatorList">
+								
+							</ul>
+							
+							<p>Data provided by Marvel. © 2014 Marvel</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/script.js"></script>
+	</body>
+</html>

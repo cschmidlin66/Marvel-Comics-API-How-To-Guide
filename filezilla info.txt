@@ -1,0 +1,5 @@
+sftp:://schmidlc@access.engr.oregonstate.edu
+
+port = 22
+
+http://it.engineering.oregonstate.edu/accessing-engineering-file-space-using-filezilla-sftp

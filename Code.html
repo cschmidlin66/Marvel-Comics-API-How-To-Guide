@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Marvel Comics API Getting Started Guide - Coding with the API</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Home</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="starthere.html">Start Here</a>
+						<a href="setup.html">Setup</a>
+						<a href="response.html">Understanding the response</a>
+						<a href="Code.html">Coding with the API</a>
+						<a href="examples.html">Code Examples</a>
+						<a href="testhere.html">Test Here</a>
+
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Three -->
+			<section id="setupPage" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Coding with the API</h2>
+						<p style="color:black;">Practice make perfect</p>
+					</header>
+					
+					<div >
+						<article>
+							<header>
+								<h3>Starting Small</h3>
+							</header>
+							<p style="color:black;">This first bit of code will show what a basic call to the API will look like when we are searching for a character by name and only want to receive a description as a result.</p>
+							<script async src="http://jsfiddle.net/nhlfreak66/zdjrodde/7/embed/js/"></script>
+							<header>
+								<h3>Lets go over what we did</h3>
+							</header>
+							<p style="color:black;">The basic objective of this code would be to grab a description of the character that the user searched. If there is no text available for the characters description then it will just display "Description not available". Now that we know what this code is meant to do, lets go through it line by line to see how it works.
+							<ul style="color:black;">
+								<li>Line 1: This line is creating the URL that the API will call and request information from. Remember in the previous pages we learned about the 6 types of resources we grab from.This part:<code>marvel.com/v1/public/characters</code> points out that we are going to be searching for a specific character. <code>?name="+characterNameString;</code> shows that we will search for this character by name. </li>
+								<li>Line 2: To start we use <code>$.getJSON()</code>. This is uses <a href="https://en.wikipedia.org/wiki/JQuery" target="_blank">jQuery</a> and <a href="https://en.wikipedia.org/wiki/Ajax_(programming)" target="_blank">Ajax</a> to retrieve <a href=https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>-encoded data from Marvel's server using a GET request. Within <code>$.getJSON()</code> we have the information we need for actually making the GET request:<code>(characterSearchWebString,{apikey: publicKey})</code> This is where the URL we created earlier comes as well as the API key. The portion <code>{apikey: publicKey}</code> contains the public API key that we received from Marvel on their developer site. This will now allow us to access their server. Next up we have the function <code>done()</code> this is called once the response data is received from the GET request. When it is called it will then perform the function that is used as an argument. This argument will then use the response we received <code>.done(function(response)</code>. </li>
+								<li>Line 3: In the previous section we learned all about the types of resources, entities, and results we could receive in the response. We also know that the response we received was a JSON object so we must access it correctly to extract our data. Our JSON object is <code>response</code> and we know that it contains the metadata for the call as well as a container shown as <code>"data":</code> which holds the information we want. We know that we want to retrieve the information as a variable to be used later so we access the <code>"data":</code> container from <code>response</code> by using <code>var characterName = response.data</code>. Next we want to move into the <code>"results":</code> array. Keep in mind that this is a specific character search so it will only yield one result, so we only need to look at the first and only spot in the array with <code>var characterName = response.data.results[0]</code>. That code now holds the entire character result, but we don't want all the information. We only want small pieces and to do that we must only look at attributes that are specific to the character entity. The final line of code to find the characters name is <code>var characterName = response.data.results[0].name;</code>. The variable <code>characterName</code> now contains the string we grabbed from the results.</li>
+								<li>Line 4: This line works the same way as previous but instead of grabbing the name it will get the character description from the results with <code>response.data.results[0].description;</code>. </li>
+								<li>Line 5 & Line 6: These lines check to see if the character actually has a description written for it. If it does not then the the variable <code>characterDescription</code> will hold <code>"Description not available"</code> to be displayed when the variable is used.</li>
+								
+							</ul>
+							</p>
+							<footer>
+								
+							</footer>
+						</article>
+					</div>
+					<div>
+						<article>
+							<div class="image fit">
+								
+							</div>
+							<header>
+								<h3>More fun!</h3>
+							</header>
+							<p style="color:black;">Now that we've made a basic call to the API we can begin to have some fun with it! On the next page we will look at some examples of ways the API can be used.</p>
+							
+							<footer>
+								<a href="examples.html" class="button special">Code Examples</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/script.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Marvel Comics API Getting Started Guide - Setup</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Home</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="starthere.html">Start Here</a>
+						<a href="setup.html">Setup</a>
+						<a href="response.html">Understanding the response</a>
+						<a href="Code.html">Coding with the API</a>
+						<a href="examples.html">Code Examples</a>
+						<a href="testhere.html">Test Here</a>
+
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Three -->
+			<section id="setupPage" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Setting Up Your API For Use</h2>
+						<p style="color:black;">Here we will prepare our API as well as ourselves to get started</p>
+					</header>
+					
+					<div >
+						<article>
+							<div class="align-center">
+								<img src="images/authorizedDomains.JPG" alt="Pic 01" />
+							</div>
+							<header>
+								<h3>Preparing your domain</h3>
+							</header>
+							<p style="color:black;">At this point you should have your Marvel Account as well as your public and private API keys. What we need to do now is give our domains access to the API.</p>
+							<div class="align-center">
+								<img src="images/authorizedDomains2.JPG" alt="Pic 01" />
+							</div>
+							<p style="color:black;">The image above shows two examples of acceptable domains. When authorized with just the first domain, "developer.marvel.com", the API will only be usable on that specific page. If an asterisk is placed in front of the second domain, then the API will be accessible by that domain as well subdomains.
+							</p>
+							<footer>
+								
+							</footer>
+						</article>
+					</div>
+					<div>
+						<article>
+							<div class="image fit">
+								
+							</div>
+							<header>
+								<h3>Important things to know</h3>
+							</header>
+							<p style="color:black;">Below here I've compiled a short list of things to know and keep in mind when using Marvel's API</p>
+							<ul style="color:black;">
+								<li>Only HTTP GET requests are accepted</li>
+								<li>All responses that are received are encoded as JSON objects</li>
+								<li>The base endpoint for the API is <code>http(s)://gateway.marvel.com/</code> </li>
+								<li>You will mostly be using <code>http(s)://gateway.marvel.com/v1/public/</code> to access specific resources</li>
+								<li>
+									The API can access 6 types of resources from Marvel's database
+									<ul style="list-style-type:circle">
+										<li>Comics</li>
+										<li>Comic Series</li>
+										<li>Comic Stories</li>
+										<li>Comic events and crossovers</li>
+										<li>Creators</li>
+										<li>Characters</li>
+									</ul>
+								</li>
+								<li>There is a limit to the number of calls the API can make with your key each day, usually around 3000</li>
+								<li>If results from the Marvel API you must attribute it to Marvel. "Data provided by Marvel. © 2014 Marvel" must be displayed everytime the results are shown. </li>
+							</ul>
+							<p style="color:black;">An important piece of information to remember when creating your URL endpoint is to know which resource you a searching for. It will then be designated within the URL. For example if we wanted to look for a specific character we would use <code>http(s)://gateway.marvel.com/v1/public/characters</code> as your base URL.</p>
+							<p style="color:black;">With that taken care of we can now move onto learning about the response we will get.</p>
+							<footer>
+								<a href="response.html" class="button special">Understanding the response</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/script.js"></script>
+
+	</body>
+</html>

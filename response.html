@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Marvel Comics API Getting Started Guide - Understanding the response</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Home</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="starthere.html">Start Here</a>
+						<a href="setup.html">Setup</a>
+						<a href="response.html">Understanding the response</a>
+						<a href="Code.html">Coding with the API</a>
+						<a href="examples.html">Code Examples</a>
+						<a href="testhere.html">Test Here</a>
+
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Three -->
+			<section id="setupPage" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Understanding The Response</h2>
+						<p style="color:black;">Here we learn about the data we are receiving</p>
+					</header>
+					
+					<div >
+						<article >
+							<header>
+								<h3>An example response</h3>
+							</header>
+							<textarea id="textBox" readonly="true">
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2017 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2017 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2017 MARVEL</a>",
+  "etag": "e26fc506286c84c0234b9bc5ee7d53895734ee71",
+  "data": {
+    "offset": 0,
+    "limit": 20,
+    "total": 1,
+    "count": 1,
+    "results": [
+      {
+        "id": 1009610,
+        "name": "Spider-Man",
+        "description": "Bitten by a radioactive spider, high school student Peter Parker gained the speed, strength and powers of a spider. Adopting the name Spider-Man, Peter hoped to start a career using his new abilities. Taught that with great power comes great responsibility, Spidey has vowed to use his powers to help people.",
+        "modified": "2016-09-28T12:15:21-0400",
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b",
+          "extension": "jpg"
+        },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+        "comics": {
+          "available": 2951,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009610/comics",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/60151",
+              "name": "A Year of Marvels (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/57926",
+              "name": "A Year of Marvels: April Infinite Comic (2016) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/43501",
+              "name": "A+X (2012) #4"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/320",
+              "name": "Actor Presents Spider-Man and the Incredible Hulk (2003) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/30885",
+              "name": "Age of Heroes (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/30090",
+              "name": "Age of Heroes (2010) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/37255",
+              "name": "Alias Omnibus (Hardcover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/46847",
+              "name": "Alpha (2013) #0.1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/46848",
+              "name": "Alpha (2013) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/12637",
+              "name": "Alpha Flight (1983) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/12668",
+              "name": "Alpha Flight (1983) #127"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/6233",
+              "name": "Alpha Flight Classic Vol. 1 (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/3105",
+              "name": "Amazing Fantasy (2004) #15"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/16926",
+              "name": "Amazing Fantasy (1962) #15"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/41139",
+              "name": "Amazing Fantasy 15: Spider-Man! (2011) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/16214",
+              "name": "Amazing Fantasy Omnibus (Hardcover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/5286",
+              "name": "Amazing Spider-Girl (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/16151",
+              "name": "Amazing Spider-Girl (2006) #11"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/13519",
+              "name": "Amazing Spider-Girl Vol. 1: Whatever Happened to the Daughter of Spider-Man (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/17305",
+              "name": "Amazing Spider-Girl Vol. 2: Comes the Carnage! (Trade Paperback)"
+            }
+          ],
+          "returned": 20
+        },
+      
+							</textarea>
+							<p style="color:black;">The above text is a shortened example of a response that the API will return when used. In that example the user searched for the character Spider-Man. As you can see that is a pretty large amount of data to sort through, but that isn't even all of it. When we searched for the character it found the characters description, individual issues, series, stories, and events. Those items should sound familiar, they are all resources that we had learned about previously.As mentioned previously, this response is given to us as a JSON object. So to actually use this data will need to extract certain pieces from the object, but before we do that lets look at an even more basic example of a response.</p>
+							<div class="align-center">
+								<textarea id="basicResponse" readonly="true">
+{
+  "code": 200,
+  "status": "Ok",
+  "etag": "f0fbae65eb2f8f28bdeea0a29be8749a4e67acb3",
+  "data": {
+    "offset": 0,
+    "limit": 20,
+    "total": 30920,
+    "count": 20,
+    "results": [{array of objects}}]
+  }
+}
+								</textarea>
+							</div>
+							<p style="color:black;"> That is the most basic form of what a response will look like when received from the API. This is made up of the metadata that gives details about the call and a container that houses the information that we are looking for. That container starts at <code> "data": {</code> and ends after <code> "results": [{array of objects}}] }</code>. Now we will look at the attributes found in this basic call.
+							</p>
+							<ul>
+								<li><code>"code":</code> - This will display the HTTP status code</li>
+								<li><code>"status":</code> - This is a description of the status code</li>
+								<li><code>"etag":</code> - An entity tag which helos with web cache validation</li>
+								<li><code>"data":</code> - This is the container that houses the results we are looking for</li>
+								<li><code>"offset":</code> - This is the number of results that are requested to be skipped</li>
+								<li><code>"limit":</code> - The maximum amount of results we ask for</li>
+								<li><code>"total":</code> - The total number of results that are actually available for the search</li>
+								<li><code>"count":</code> - The number of results we actually received from the call</li>
+								<li><code>"results":</code> - And finally the information we are looking for. The results are given to us a as an array of objects. The fact that it is an array is something to take note of when writing your code.</li>
+							</ul>
+							<footer>
+								
+							</footer>
+						</article>
+					</div>
+					<div>
+						<article>
+							<div class="image fit">
+								
+							</div>
+							<header>
+								<h3>Reading the results</h3>
+							</header>
+							<p style="color:black;">Now that we have found out where the information we want is, we are one step closer to actually being able to read it! Just like in the response we received, we now have to look deeper into the results we are given. Take note because this part is very important. Remember those 6 resources we learned about earlier, Marvel also refers to them as "Entities" and the data we receive will vary depending on the type entity we choose to look for. This means that the results will contain attributes that are not necessarily found in every entity. When working with the API you must cater your code to the specific entity you are searching for. What is interesting about these entities is that can house other enitites within themselves. In following the example response we used earlier with Spider-Man, we will now look at the attributes found within the character entity. Some of these should be familiar to you as we went over them previously.</p>
+							<ul>
+								<li><code>"id":</code> Data Type = int - A unique identification number specific to the resource</li>
+								<li><code>"name":</code> Data Type = string - The name of the character</li>
+								<li><code>"description":</code> Data Type = string - A brief description of the character </li>
+								<li><code>"modified": </code> Data Type = int - The date the resoure or entity was most recently modified on Marvel's database</li>
+								<li><code>"thumbnail": </code> Data Type = image - An image representative of the character</li>
+								<li><code>"resourceURI":</code> Data Type = string - A URL specific to the character or resource</li>
+								<li><code>"comics": </code> Data Type = resource list - A list of comics in which the character was featured in</li>
+								<li><code>"series":</code> Data Type = resource list - A list of series in which the character was found in</li>
+								<li><code>"stories":</code> Data Type = resource list - A list of stories in which the character was found in</li>
+								<li><code>"events":</code> Data Type = resource list - A list of events in which the character was found in</li>
+								<li><code>"urls":[</code> Data Type = Array[URL] - Websites that can be accessed publicly and without an API key</li>
+							</ul>
+							<p style="color:black;">As stated before these are the attributes found within the character entity and though some of them are used in other entities, it is important to remeber that not all attributes are found in every entity. For a list of all of the entities and their specific attributes you can go to <a href="https://developer.marvel.com/documentation/entity_types" target="_blank">Marvel's developer page on entity types.</a></p>
+
+							<header>
+								<h3>Moving forward</h3>
+							</header>
+
+							<p style="color:black;">Once you understand how one entity and their results work, it will be just a matter of adapting your code to the correct attributes! Now that we know how the mechanics of the results we can move onto the fun part and begin to code ways to acquire them!</p>
+							<footer>
+								<a href="Code.html" class="button special">Coding with the API</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/script.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Marvel Comics API Getting Started Guide - Code Examples</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Home</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="starthere.html">Start Here</a>
+						<a href="setup.html">Setup</a>
+						<a href="response.html">Understanding the response</a>
+						<a href="Code.html">Coding with the API</a>
+						<a href="examples.html">Code Examples</a>
+						<a href="testhere.html">Test Here</a>
+
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Three -->
+			<section id="setupPage" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Code Examples</h2>
+						<p style="color:black;">A few different ways to use the API</p>
+					</header>
+					
+					<div >
+						<article>
+							<header>
+								<h3>The character entity</h3>
+							</header>
+							<p style="color:black;">For these examples we are going to focus on the character entity and a few different ways it can be used.</p>
+							<header>
+								<h3>Getting a character's description as well as a picture</h3>
+							</header>
+							<iframe width="100%" height="300" src="http://jsfiddle.net/nhlfreak66/pefkkej8/1/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+							<header>
+								<h3>Lets go over what we did</h3>
+							</header>
+							<p style="color:black;"> The code above is an extended version of the code example used on the last page. The main differences are that it is now grabbing an image and included the code for adding it into the HTML document. So we will pay attention to those additions.
+							</p>
+							<ul>
+								<li>Line 9: Remember that Marvel's documentation notes thumbnails as images representative of items we are looking at, so when trying to find the pictures of these characters that is where we need to look hence: <code>var picturePath = response.data.results[0].thumbnail.path;</code>. Notice that we don't only use <code>response.data.results[0].thumbnail</code> to grab the image.The <code>thumbnail</code> attribute actually has a few parts to it that we need to combine together. The <code>path</code>, the <code>extension</code>, and the size of the image.  We add <code>.path;</code> to get part of the URL path for the image.</li>
+								<li>Line 10: We continue to grab parts from the <code>thumbnail</code> attribute to eventually create the whole image. In this line we get the <code>extension</code>. This is going to give us the type of image file that the <code>thumbnail</code> is.</li>
+								<li>Line 11: This line is the last part of setting up the whole URL for grabbing the image. In it we combine the two previous lines as well as adding the size we want for the image, that portion being <code>"/standard_large"</code>. More information on the different image sizes that can be chose is found on <a href="https://developer.marvel.com/documentation/images" target="_blank">Marvel's Developer page on images.</a> </li>
+								<li>Lines 12, 13, & 14: This is where we will add the data to the HTML document that will make up the webpage itself. We know that <code>characterName</code> and <code>characterDescription</code> are both strings so they are placed in paragraph tagged areas and added by using <code>.innerHTML =</code>. For the image we are placing, it must be added to an image tagged area and the URL must be set by using <code>.src =</code>. </li>	
+							</ul>
+							<footer>
+								
+							</footer>
+						</article>
+						<article>
+							<header>
+								<h3>Search for characters by name that start with specific letters </h3>
+							</header>
+							<iframe width="100%" height="300" src="http://jsfiddle.net/nhlfreak66/pwrtLpdf/1/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+							<header>
+								<h3>Lets go over what we did</h3>
+							</header>
+							<p style="color:black;"> In this example we do something similar to the previous one, except instead searching for a single character we are searching for a few. This code is designed to find the first 5 characters with a certain order of letters in the beginning of their name.
+							</p>
+							<ul>
+								<li>Line 1: The differences begin right away with this code. Because we are making GET requests the data we are searching for is going to be defined by the URL we use. So to find a characters whose name starts with certain letters we are going have our url use <code>/characters?nameStartsWith="+letterString</code>. With <code>nameStartsWith=</code> signifying the type of search we are doing and <code>letterString</code> being the letters we want to search. It also important to point out <code>"&limit=5"</code>. This part of the URL will limit the amount of results we receive so that we are not given an incredibly long list of names. The limit is set at 5 and as such we will only receive 5 results.</li>
+								<li>Line 3: Because we are getting more than one character from this search we will have a list tagged area ready in the HTML document <code>var list = document.getElementById("characterList");</code>.</li>
+								<li>Line 4: TO make sure that every time we run this script we do not keep adding to an ever expanding list of characters and stick to just 5, we will need to clear out our list before we add new items to it with <code>$(list).empty();</code>.</li>
+								<li>Line 6: Because we are only grabbing 5 characters we make a <code>for loop</code> in this line to only do what we need to 5 times.</li>
+								<li>Line 7: We create a new list item each iteration with <code>var li = document.createElement("li");</code></li>
+								<li>Line 8: We get the character result name based on the current iteration we are in with <code>var characterName = response.data.results[i].name;</code>.</li>
+								<li>Line 9: We add the character name to the list item we created previously with <code>li.appendChild(document.createTextNode(characterName));</code></li>
+								<li>Line 10: Finally we add the list item into the full list <code>list.appendChild(li);</code></li>
+							</ul>
+							<footer>
+								
+							</footer>
+						</article>
+
+						<article>
+							<header>
+								<h3>Find the first issue a character appeared in </h3>
+							</header>
+							<iframe width="100%" height="300" src="http://jsfiddle.net/nhlfreak66/uwckary9/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+							
+							<header>
+								<h3>Lets go over what we did</h3>
+							</header>
+							<p style="color:black;">This example will give us the first issue a character appears in. It will display the issue name as well as the cover image from that issue.
+							
+							</p>
+							<ul>
+								<li>Line 1: So to be able to find a first issue of a character we need to know how far back to look. So I found out when the first Marvel comic was released. That will be used as part of our date range for our search: <code>var dateRange = "dateRange=1939-01-01%2C2017-01-01";</code> </li>
+								<li>Line 2: Once again we will be searching for a character by name.</li>
+								<li>Line 4: This time once we have our character we will grab their ID so that we can perform another search later on: <code>var characterID = response.data.results[0].id;</code></li>
+								<li>Line 6: We will now search for the character again but by ID so that we can get different information and really narrow down our search: <code>"https://gateway.marvel.com/v1/public/characters/"+characterID+"/comics?"+dateRange+"&orderBy=onsaleDate&limit=1";</code>. Because we want to find a specific issue we must specify that we are really only looking for comics and we do so with <code>/characters/"+characterID+"/comics?</code> We will use the date range we had set previously so we can search as far back as possible, we also want to sort it by the oldest date first, and lastly make sure we only grab a single issue. This can be accomplished with by adding <code>"&orderBy=onsaleDate&limit=1"</code> to the URL.</li>
+								<li>Line 8: We grab the title from the response we receive with <code>var issueName = response.data.results[0].title;</code></li>
+								<li>Lines 9 - 14: In these final lines we grab the <code>thumbnail</code> from the response, then add it and the issue title into the HTML document.</li>
+							</ul>
+							<footer>
+								
+							</footer>
+						</article>
+						<article>
+							<header>
+								<h3>Find a character's creators </h3>
+							</header>
+							<iframe width="100%" height="300" src="http://jsfiddle.net/nhlfreak66/ggvyrn8u/1/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+							
+							<header>
+								<h3>Lets go over what we did</h3>
+							</header>
+							<p style="color:black;">This final example is a mixture of the previous ones. It has us doing more than one search in the same manner as we previously had and we will be getting multiple names of creators. And because this is a combination of the previous examples instead of going line by line we are going to look at how it was done and only focus on key differences.  
+							</p>
+							<p style="color:black;">In the previous example we found a characters first appearance by using a set date range, and that what we are going to do again. Our goal is first to find that first issue that they had appeared in. Once we have that comic we will then pull information from it just as we did last time, but instead of a title or an image we will find the creators. First we will need to find the number of people who worked on the issue by looking in the <code>creators</code> attribute and grabbing the key shown as <code>available</code>. Once we have that we can create a loop to grab the number of people we need as well as making the correct amount of list items. Within the <code>creators</code> attribute there is an array shown as <code>items[]</code>. This array houses each individual creator as well as their respective roles. That is the information we want. Each iteration of the aforementioned loop will use both <code>results[0].creators.items[i].name;</code> and <code>results[0].creators.items[i].role;</code> to pull out the information we want. It will then add that data to the a list item and then to the list itself.</p>
+							<footer>
+								
+							</footer>
+						</article>
+					</div>
+					<div>
+						<article>
+							<div class="image fit">
+								
+							</div>
+							<header>
+								<h3>Seeing it all in action!</h3>
+							</header>
+							
+							<p style="color:black;">Now that we've looked at how each of the examples work, lets go see them in action. The next page has complete working versions of each example with their scripts already built into the page!</p>
+							<footer>
+								<a href="testhere.html" class="button special">Try out the examples!</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/script.js"></script>
+
+	</body>
+</html>
